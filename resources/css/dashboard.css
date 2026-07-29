@@ -1,0 +1,152 @@
+/* 全体のサイズ計算を分かりやすくする */
+* {
+    box-sizing: border-box;
+}
+
+/* ページ全体 */
+body {
+    margin: 0;
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+}
+
+/* 左側と右側を横に並べる */
+.layout {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* 左側のメニュー */
+.sidebar {
+    width: 220px;
+    padding: 20px;
+    background-color: white;
+    border-right: 1px solid #dddddd;
+
+    /* 上と下を分ける */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* アプリ名 */
+.sidebar h2 {
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #2563eb;
+    font-size: 20px;
+}
+
+/* メニュー全体 */
+.sidebar nav {
+    display: flex;
+    flex-direction: column;
+}
+
+/* メニュー1つ分 */
+.sidebar nav a {
+    padding: 12px;
+    margin-bottom: 5px;
+
+    color: #444444;
+    text-decoration: none;
+
+    border-radius: 5px;
+}
+
+/* アイコンと文字の間 */
+.sidebar nav i {
+    margin-right: 8px;
+}
+
+/* マウスを乗せたとき */
+.sidebar nav a:hover {
+    background-color: #eeeeee;
+}
+
+/* サイドバーの下側 */
+.sidebar-bottom {
+    padding-top: 15px;
+    border-top: 1px solid #dddddd;
+}
+
+/* ユーザー名 */
+.sidebar-bottom p {
+    font-weight: bold;
+}
+
+/* ログアウトボタン */
+.sidebar-bottom button {
+    width: 100%;
+    padding: 10px;
+
+    color: red;
+    background-color: white;
+
+    border: 1px solid #dddddd;
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+/* 右側の画面 */
+.main {
+    flex: 1;
+    padding: 30px;
+}
+
+/* タイトル */
+.main h1 {
+    margin-bottom: 5px;
+}
+
+/* タイトルの下の文章 */
+.message {
+    margin-top: 0;
+    margin-bottom: 25px;
+    color: #777777;
+}
+
+/* 4枚のカードを横に並べる */
+.cards {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+/* カード1枚分 */
+.card {
+    flex: 1;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+/* カードの文字 */
+.card p {
+    margin-top: 0;
+    color: #777777;
+}
+
+/* カードの金額 */
+.card h2 {
+    margin-bottom: 0;
+    color: #2563eb;
+}
+
+/* 下の大きなカード */
+.content {
+    min-height: 300px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+/* 画面が狭い場合 */
+@media (max-width: 800px) {
+
+    /* カードを縦に並べる */
+    .cards {
+        flex-direction: column;
+    }
+}
