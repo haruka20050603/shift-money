@@ -59,10 +59,7 @@ body {
     margin-right: 8px;
 }
 
-/* マウスを乗せたとき */
-.sidebar nav a:hover {
-    background-color: #eeeeee;
-}
+
 
 /* サイドバーの下側 */
 .sidebar-bottom {
@@ -141,6 +138,55 @@ body {
     background-color: white;
     border-radius: 8px;
 }
+
+/* カレンダー */
+#calendar {
+    margin-top: 20px;
+}
+
+/* 日付リンク共通 */
+#calendar .fc-col-header-cell-cushion,
+#calendar .fc-daygrid-day-number {
+    color: #111827;
+    text-decoration: none;
+}
+
+/* 土曜日 */
+#calendar .fc-day-sat {
+    background-color: #eff6ff;
+}
+
+#calendar .fc-day-sat .fc-col-header-cell-cushion,
+#calendar .fc-day-sat .fc-daygrid-day-number {
+    color: #2563eb;
+}
+
+/* 日曜日 */
+#calendar .fc-day-sun {
+    background-color: #fef2f2;
+}
+
+#calendar .fc-day-sun .fc-col-header-cell-cushion,
+#calendar .fc-day-sun .fc-daygrid-day-number {
+    color: #dc2626;
+}
+
+/* カレンダー上部のボタン */
+#calendar .fc-button-primary {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+#calendar .fc-button-primary:hover {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+}
+
+
+
+
+
+
 
 /* 画面が狭い場合 */
 @media (max-width: 800px) {

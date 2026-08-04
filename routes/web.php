@@ -9,11 +9,14 @@ Route::get('/', function () {
 
 });
 // ログイン画面
-Route::get('/login', [LoginController::class, 'index'])->name('login.index');
+Route::get('/login', [LoginController::class, 'index'])
+->name('login.index');
 // ログイン処理
-Route::post('/login', [LoginController::class, 'login'])->name('login.login');
+Route::post('/login', [LoginController::class, 'login'])
+->name('login.login');
 
-Route::middleware('auth')->group(function () {
+Route::middleware('auth')
+->group(function () {
     // ダッシュボード画面
     Route::get('/dashboard', function () {
         return view('login.dashboard');

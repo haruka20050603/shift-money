@@ -9,6 +9,7 @@
         content="width=device-width, initial-scale=1.0"
     >
 
+
     <title>ダッシュボード</title>
 
     {{-- アイコンを使うための読み込み --}}
@@ -19,6 +20,15 @@
 
     {{-- dashboard.cssを読み込む --}}
     @vite('resources/css/dashboard.css')
+    {{-- app.jsを読み込む --}}
+    @vite( 
+    'resources/js/app.js')
+
+    {{-- FullCalendarのCSSを読み込む --}}
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.css"
+>
 </head>
 
 <body>
@@ -38,7 +48,7 @@
     </h2>
 
     {{-- メニュー --}}
-        <nav>
+        <nav id="sidebar-menu">
 
         <a href="{{ route('dashboard') }}">
         <i class="bi bi-house"></i>
@@ -118,17 +128,66 @@
 
                     {{-- 下の大きな場所 --}}
                     <div class="content">
+                    <h2>スケジュール</h2>
 
-                    <h2>Shift Money</h2>
-                    <p>
-                    ここにカレンダーを追加します。
-                    </p>
+                    <div id="calendar">
+
                     </div>
+                        </div>
 
         </main>
 
     </div>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/locales/ja.js"></script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const calendarElement = document.getElementById('calendar');
+
+        const calendar = new FullCalendar.Calendar(calendarElement, {
+            initialView: 'dayGridMonth',
+            locale: 'ja',
+            firstDay: 1,
+            height: 'auto',
+            fixedWeekCount: false,
+            showNonCurrentDates: false,
+            eventDisplay: 'block',
+            displayEventEnd: true,
+
+            // Controllerから渡された予定
+            events: @json($events ?? []),
+
+            headerToolbar: {
+                left: 'prev,next today',
+                center: 'title',
+                right: 'dayGridMonth,timeGridWeek,timeGridDay,listWeek'
+            },
+
+            buttonText: {
+                today: '今日',
+                month: '月',
+                week: '週',
+                day: '日',
+                list: 'リスト'
+            },
+
+            noEventsContent: '予定はありません',
+
+            
+
+            eventClick: function (info) {
+                // イベント編集画面がある場合に利用できます
+                if (info.event.url) {
+                    info.jsEvent.preventDefault();
+                    window.location.href = info.event.url;
+                }
+            }
+        });
+
+        calendar.render();
+    });
+</script>
 </body>
 
 </html>
