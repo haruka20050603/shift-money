@@ -37,7 +37,7 @@
     <div class="layout">
 
     {{-- 左側のメニュー --}}
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
 
     <div>
 
@@ -45,6 +45,7 @@
     <h2>
     <i class="bi bi-wallet2"></i>
     Shift Money
+  
     </h2>
 
     {{-- メニュー --}}
@@ -92,6 +93,9 @@
             </form>
             </div>
     </aside>
+        <div class="top-space">
+            <button id="menu-button" type="button">☰</button>
+        </div>
 
                 {{-- 右側の画面 --}}
                 <main class="main">
