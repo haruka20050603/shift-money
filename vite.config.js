@@ -10,7 +10,10 @@ export default defineConfig({
     'resources/css/app.css',
     'resources/css/login.css',
     'resources/css/dashboard.css',
+    'resources/css/shift-input.css',
     'resources/js/app.js',
+    'resources/js/shift-input.js',
+
 ],
             refresh: true,
             fonts: [
