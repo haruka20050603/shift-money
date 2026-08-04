@@ -67,7 +67,7 @@
     ========================== -->
     <form method="POST" action="{{ route('shift.store') }}">
         @csrf
-        <div id="shiftForm" class="tab-content">
+        <div id="shift-form" class="tab-content">
 
 
 
@@ -83,18 +83,18 @@
             <div class="box">
                 <label
                     class="label"
-                    for="workDate"
+                    for="work-date"
                 >
                     <i class="bi bi-calendar-event"></i>
                     日付
                 </label>
 
                 <input
-                    id="workDate"
+                    id="work-date"
                     class="input"
                     type="date"
                     value="{{ request()->query('date') }}"
-                    name="workDate"
+                    name="work-date"
                 >
 
             </div>
@@ -109,7 +109,7 @@
                 <div class="box">
                     <label
                         class="label"
-                        for="startTime"
+                        for="start-time"
                     >
                         <i class="bi bi-box-arrow-in-right"></i>
 
@@ -119,26 +119,26 @@
                     <div class="time-row">
 
                         <input
-                            id="startTime"
+                            id="start-time"
                             class="input"
                             type="number"
                             placeholder="時"
                             min="0"
                             max="23"
-                            name="startTime"
+                            name="start-time"
                             onwheel="this.blur();"
                         >
 
                         <span class="time-colon">：</span>
 
                         <input
-                            id="startminute"
+                            id="start-minute"
                             class="input"
                             type="number"
                             placeholder="分"
                             min="0"
                             max="59"
-                            name="startminute"
+                            name="start-minute"
                             onwheel="this.blur();"
                         >
 
@@ -153,7 +153,7 @@
 
                     <label
                         class="label"
-                        for="endTime"
+                        for="end-time"
                     >
                         <i class="bi bi-box-arrow-left"></i>
 
@@ -163,29 +163,29 @@
                     <div class="time-row">
 
                         <input
-                            id="endTime"
+                            id="end-time"
                             class="input"
                             type="number"
                             placeholder="時"
                             min="0"
                             max="23"
-                            name="endTime"
+                            name="end-time"
                             onwheel="this.blur();"
-                            name="endTime"
+                            name="end-time"
                         >
 
                         <span class="time-colon">：</span>
 
                         <input
-                            id="endminute"
+                            id="end-minute"
                             class="input"
                             type="number"
                             placeholder="分"
                             min="0"
                             max="59"
-                            name="endminute"
+                            name="end-minute"
                             onwheel="this.blur();"
-                            name="endminute"
+                            name="end-minute"
                         >
 
                     </div>
@@ -227,7 +227,7 @@
 
                 <label
                     class="label"
-                    for="breakTime"
+                    for="break-time"
                 >
                     <i class="bi bi-cup-hot"></i>
 
@@ -237,26 +237,26 @@
                 <div class="time-row">
 
                     <input
-                        id="breakTime"
+                        id="break-time"
                         class="input"
                         type="number"
                         placeholder="時間"
                         min="0"
                         onwheel="this.blur();"
-                        name="breakTime"
+                        name="break-time"
                     >
 
                     <span class="time-colon">：</span>
 
                     <input
-                        id="breakminute"
+                        id="break-minute"
                         class="input"
                         type="number"
                         placeholder="分"
                         min="0"
                         max="59"
                         onwheel="this.blur();"
-                        name="breakminute"
+                        name="break-minute"
                         >
 
                 </div>
@@ -268,7 +268,7 @@
 
             <div class="buttons">
 
-                <button id="saveButton" class="btn save" type="submit">
+                <button id="save-button" class="btn save" type="submit">
                     <i class="bi bi-floppy"></i>
 
                     保存
@@ -285,9 +285,9 @@
     ========================== -->
 <form method="POST" action="{{ route('expenses.store') }}">
     @csrf
-    <div id="expenseForm" class="tab-content" style="display: none;">
+    <div id="expense-form" class="tab-content" style="display: none;">
 
-       
+    
 
             <h1 class="title">
                 <i class="bi bi-cart-x"></i>
@@ -301,7 +301,7 @@
 
                 <label
                     class="label"
-                    for="rouhiDate"
+                    for="rouhi-date"
                 >
                     <i class="bi bi-calendar-event"></i>
 
@@ -309,8 +309,8 @@
                 </label>
 
                 <input
-                    id="rouhiDate"
-                    name="rouhiDate"
+                    id="rouhi-date"
+                    name="rouhi-date"
                     class="input"
                     type="date"
                     value="{{ request()->query('date') }}"
@@ -325,7 +325,7 @@
 
                 <label
                     class="label"
-                    for="rouhiTotal"
+                    for="rouhi-total"
                 >
                     <i class="bi bi-cash"></i>
 
@@ -333,12 +333,12 @@
                 </label>
 
                 <input
-                    id="rouhiTotal"
+                    id="rouhi-total"
                     class="input"
                     type="number"
                     placeholder="例：3000"
                     min="0"
-                    name="rouhiTotal"
+                    name="rouhi-total"
                     onwheel="this.blur();"
                 >
 
@@ -351,7 +351,7 @@
 
                 <label
                     class="label"
-                    for="rouhiMemo"
+                    for="rouhi-memo"
                 >
                     <i class="bi bi-pencil-square"></i>
 
@@ -359,9 +359,9 @@
                 </label>
 
                 <textarea
-                    id="rouhiMemo"
+                    id="rouhi-memo"
                     class="input textarea"
-                    name="rouhiMemo"
+                    name="rouhi-memo"
                     rows="4"
                     placeholder="何に使ったか入力"
                 ></textarea>
@@ -374,7 +374,7 @@
             <div class="buttons">
 
                 <button
-                    id="rouhiButton"
+                    id="rouhi-button"
                     class="btn expense"
                     type="submit"
                 >
@@ -393,7 +393,7 @@
     ========================== -->
 <form method="POST" action="{{ route('bonus.store') }}">
     @csrf
-    <div id="bonusForm" class="tab-content" style="display: none;">
+    <div id="bonus-form" class="tab-content" style="display: none;">
             <h1 class="title">
 
                 <i class="bi bi-gift"></i>
@@ -409,7 +409,7 @@
 
                 <label
                     class="label"
-                    for="bounusDate"
+                    for="bounus-tate"
                 >
                     <i class="bi bi-calendar-event"></i>
 
@@ -417,11 +417,11 @@
                 </label>
 
                 <input
-                    id="bounusDate"
+                    id="bounus-date"
                     class="input"
                     type="date"
                     value="{{ request()->query('date') }}"
-                    name="bounusDate"
+                    name="bounus-date"
                 >
 
             </div>
@@ -433,7 +433,7 @@
 
                 <label
                     class="label"
-                    for="bounusTotal"
+                    for="bounus-total"
                 >
                     <i class="bi bi-cash-stack"></i>
 
@@ -441,14 +441,14 @@
                 </label>
 
                 <input
-                    id="bounusTotal"
+                    id="bounus-botal"
                     class="input"
                     type="number"
                     placeholder="例：5000"
                     min="0"
                     onwheel="this.blur();"
                     value="{{ old('bounusTotal') }}"
-                    name="bounusTotal"
+                    name="bounus-total"
                 >
 
             </div>
@@ -460,19 +460,19 @@
 
                 <label
                     class="label"
-                    for="bounusMemo"
+                    for="bounus-memo"
                 >
-                    <i class="bi bi-pencil-square"></i>
+            <i class="bi bi-pencil-square"></i>
 
                     メモ
                 </label>
 
                 <textarea
-                    id="bounusMemo"
+                    id="bounus-memo"
                     class="input textarea"
                     rows="4"
                     placeholder="ボーナスの内容を入力"
-                    name="bounusMemo"
+                    name="bounus-memo"
                 ></textarea>
 
             </div>
@@ -482,7 +482,7 @@
 
             <div class="buttons">
 
-            <button id="bounusButton" class="btn bonus" type="submit">
+            <button id="bounus-button" class="btn bonus" type="submit">
             <i class="bi bi-plus-circle"></i>
             入力
             </button>
