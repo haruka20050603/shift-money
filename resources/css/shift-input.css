@@ -1,0 +1,205 @@
+/* シフト入力ページ */
+* {
+
+  margin: 0;
+
+  padding: 0;
+
+  box-sizing: border-box;
+
+}
+body {
+  background-color: #f5f7fb;
+  padding: 40px 20px;
+  font-size: 18px;
+  font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+  color: #333;
+  line-height: 1.7;
+}
+
+/* コンテナ */
+.container {
+  max-width: 700px;
+  margin: auto;
+}
+
+/* カード */
+.card {
+  background-color: white;
+  border-radius: 25px;
+  padding: 30px;
+  margin-bottom: 40px;
+
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* タイトル */
+.title {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #1e293b;
+}
+
+/* 入力グループ */
+.box {
+  margin-bottom: 25px;
+}
+
+.shift-times{
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* ラベル */
+.label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #334155;
+}
+.main-tabs {
+    display: flex;
+}
+
+.tab {
+    width: 100%;
+    padding: 12px;
+    color: white;
+    background-color: #3b82f6;
+    border-radius: 20px;
+
+    
+}
+
+
+/* 入力欄 */
+.input {
+  width: 100%;
+  padding: 18px;
+  border: 1px solid #d1d5db;
+  border-radius: 18px;
+  font-size: 1rem;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+
+/* textarea余白 */
+.textarea {
+  margin-bottom: 20px;
+}
+
+/* 横並び */
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+.time-row{
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+
+
+/* 半分 */
+.col {
+  width: 50%;
+  min-width: 0;
+}
+
+/* ボタンエリア */
+.buttons {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* ボタン共通 */
+.btn {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  padding: 16px 42px;
+  border-radius: 18px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+/* 保存ボタン */
+.save {
+  background-color: #2563eb;
+}
+
+.save:hover {
+  background-color: #1d4ed8;
+}
+
+/* 浪費ボタン */
+.expense {
+  background-color: #dc2626;
+}
+
+.expense:hover {
+  background-color: #b91c1c;
+}
+
+/* ボーナスボタン */
+.bonus {
+  background-color: #16a34a;
+}
+
+.bonus:hover {
+  background-color: #15803d;
+}
+
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+
+  .title {
+    font-size: 2.3rem;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  .row {
+    flex-direction: column;
+  }
+
+  .col {
+    width: 100%;
+  }
+
+  .btn {
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .tabs{
+    display:flex;
+    margin-bottom:20px;
+}
+
+.tab{
+    flex:1;
+    padding:12px;
+    border:none;
+    cursor:pointer;
+    background:#ddd;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.tab.active{
+    background:#3b82f6;
+    color:#fff;
+    font-weight:bold;
+}
+}
