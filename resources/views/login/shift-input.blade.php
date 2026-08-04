@@ -63,13 +63,11 @@
 
 
     <!-- =========================
-  　　　シフト入力画面
+　　　シフト入力画面
     ========================== -->
-
-    <div
-        id="shiftForm"
-        class="tab-content"
-    >
+    <form method="POST" action="{{ route('shift.store') }}">
+        @csrf
+        <div id="shiftForm" class="tab-content">
 
 
 
@@ -95,6 +93,8 @@
                     id="workDate"
                     class="input"
                     type="date"
+                    value="{{ request()->query('date') }}"
+                    name="workDate"
                 >
 
             </div>
@@ -125,6 +125,7 @@
                             placeholder="時"
                             min="0"
                             max="23"
+                            name="startTime"
                             onwheel="this.blur();"
                         >
 
@@ -137,6 +138,7 @@
                             placeholder="分"
                             min="0"
                             max="59"
+                            name="startminute"
                             onwheel="this.blur();"
                         >
 
@@ -167,7 +169,9 @@
                             placeholder="時"
                             min="0"
                             max="23"
+                            name="endTime"
                             onwheel="this.blur();"
+                            name="endTime"
                         >
 
                         <span class="time-colon">：</span>
@@ -179,7 +183,9 @@
                             placeholder="分"
                             min="0"
                             max="59"
+                            name="endminute"
                             onwheel="this.blur();"
+                            name="endminute"
                         >
 
                     </div>
@@ -209,6 +215,7 @@
                     placeholder="例：1160"
                     min="0"
                     onwheel="this.blur();"
+                    name="wage"
                 >
 
             </div>
@@ -236,6 +243,7 @@
                         placeholder="時間"
                         min="0"
                         onwheel="this.blur();"
+                        name="breakTime"
                     >
 
                     <span class="time-colon">：</span>
@@ -248,7 +256,8 @@
                         min="0"
                         max="59"
                         onwheel="this.blur();"
-                    >
+                        name="breakminute"
+                        >
 
                 </div>
 
@@ -259,41 +268,30 @@
 
             <div class="buttons">
 
-                <button
-                    id="saveButton"
-                    class="btn save"
-                    type="button"
-                >
+                <button id="saveButton" class="btn save" type="submit">
                     <i class="bi bi-floppy"></i>
 
                     保存
                 </button>
-
             </div>
-
         </div>
+        </form> 
 
-  
+
 
 
     <!-- =========================
     浪費入力画面
     ========================== -->
-
-    <div
-        id="expenseForm"
-        class="tab-content"
-        style="display: none;"
-    >
+<form method="POST" action="{{ route('expenses.store') }}">
+    @csrf
+    <div id="expenseForm" class="tab-content" style="display: none;">
 
        
 
             <h1 class="title">
-
                 <i class="bi bi-cart-x"></i>
-
                 浪費入力
-
             </h1>
 
 
@@ -312,8 +310,10 @@
 
                 <input
                     id="rouhiDate"
+                    name="rouhiDate"
                     class="input"
                     type="date"
+                    value="{{ request()->query('date') }}"
                 >
 
             </div>
@@ -338,6 +338,7 @@
                     type="number"
                     placeholder="例：3000"
                     min="0"
+                    name="rouhiTotal"
                     onwheel="this.blur();"
                 >
 
@@ -360,6 +361,7 @@
                 <textarea
                     id="rouhiMemo"
                     class="input textarea"
+                    name="rouhiMemo"
                     rows="4"
                     placeholder="何に使ったか入力"
                 ></textarea>
@@ -374,29 +376,24 @@
                 <button
                     id="rouhiButton"
                     class="btn expense"
-                    type="button"
+                    type="submit"
                 >
                     <i class="bi bi-plus-circle"></i>
 
                     入力
                 </button>
-
             </div>
-
-       
-
-    </div>
+        </div>
+        </form>
+  
 
 
     <!-- =========================
-         ボーナス入力画面
+        ボーナス入力画面
     ========================== -->
-
-    <div
-        id="bonusForm"
-        class="tab-content"
-        style="display: none;"
-    >
+<form method="POST" action="{{ route('bonus.store') }}">
+    @csrf
+    <div id="bonusForm" class="tab-content" style="display: none;">
             <h1 class="title">
 
                 <i class="bi bi-gift"></i>
@@ -423,6 +420,8 @@
                     id="bounusDate"
                     class="input"
                     type="date"
+                    value="{{ request()->query('date') }}"
+                    name="bounusDate"
                 >
 
             </div>
@@ -448,6 +447,8 @@
                     placeholder="例：5000"
                     min="0"
                     onwheel="this.blur();"
+                    value="{{ old('bounusTotal') }}"
+                    name="bounusTotal"
                 >
 
             </div>
@@ -471,6 +472,7 @@
                     class="input textarea"
                     rows="4"
                     placeholder="ボーナスの内容を入力"
+                    name="bounusMemo"
                 ></textarea>
 
             </div>
@@ -480,24 +482,17 @@
 
             <div class="buttons">
 
-                <button
-                    id="bounusButton"
-                    class="btn bonus"
-                    type="button"
-                >
-                    <i class="bi bi-plus-circle"></i>
-
-                    入力
-                </button>
+            <button id="bounusButton" class="btn bonus" type="submit">
+            <i class="bi bi-plus-circle"></i>
+            入力
+            </button>
             </div>
-            
-            
-
         </div>
-
+    </form>
     </div>
 
 </div>
+
 
 </body>
 </html>

@@ -178,7 +178,12 @@
 
             noEventsContent: '予定はありません',
 
-            
+            dateClick: function (info) {
+                        // 日付をクリックしたときの処理
+                        const date = info.dateStr;
+                        const url = "{{ route('shift-input') }}?date=" + date;
+                        window.location.href = url;
+                    },
 
             eventClick: function (info) {
                 // イベント編集画面がある場合に利用できます

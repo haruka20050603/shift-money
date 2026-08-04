@@ -92,9 +92,10 @@
                 </label>
 
                 <input
-                    id="workDate"
+                    id="work_date"
                     class="input"
                     type="date"
+                    value="{{ old('work_date', request('date')) }}"
                 >
 
             </div>
@@ -423,6 +424,7 @@
                     id="bounusDate"
                     class="input"
                     type="date"
+                    value="{{ old('bounus_date') }}"
                 >
 
             </div>
@@ -448,6 +450,7 @@
                     placeholder="例：5000"
                     min="0"
                     onwheel="this.blur();"
+                    value="{{ old('bounusTotal') }}"
                 >
 
             </div>
@@ -471,6 +474,7 @@
                     class="input textarea"
                     rows="4"
                     placeholder="ボーナスの内容を入力"
+                    value="{{ old('bounusMemo') }}"
                 ></textarea>
 
             </div>
