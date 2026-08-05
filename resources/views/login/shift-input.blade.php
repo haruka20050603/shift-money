@@ -67,7 +67,7 @@
     ========================== -->
     <form method="POST" action="{{ route('shift.store') }}">
         @csrf
-        <div id="shift-form" class="tab-content">
+        <div id="shiftForm" class="tab-content">
 
 
 
@@ -83,7 +83,7 @@
             <div class="box">
                 <label
                     class="label"
-                    for="work-date"
+                    for="workDate"
                 >
                     <i class="bi bi-calendar-event"></i>
                     日付
@@ -120,6 +120,7 @@
 
                         <input
                             id="start-time"
+                        
                             class="input"
                             type="number"
                             placeholder="時"
@@ -268,7 +269,7 @@
 
             <div class="buttons">
 
-                <button id="save-button" class="btn save" type="submit">
+                <button id="saveButton" class="btn save" type="submit">
                     <i class="bi bi-floppy"></i>
 
                     保存
@@ -285,9 +286,9 @@
     ========================== -->
 <form method="POST" action="{{ route('expenses.store') }}">
     @csrf
-    <div id="expense-form" class="tab-content" style="display: none;">
+    <div id="expenseForm" class="tab-content" style="display: none;">
 
-    
+       
 
             <h1 class="title">
                 <i class="bi bi-cart-x"></i>
@@ -393,7 +394,7 @@
     ========================== -->
 <form method="POST" action="{{ route('bonus.store') }}">
     @csrf
-    <div id="bonus-form" class="tab-content" style="display: none;">
+    <div id="bonusForm" class="tab-content" style="display: none;">
             <h1 class="title">
 
                 <i class="bi bi-gift"></i>
@@ -409,7 +410,7 @@
 
                 <label
                     class="label"
-                    for="bounus-tate"
+                    for="bounus-date"
                 >
                     <i class="bi bi-calendar-event"></i>
 
@@ -441,13 +442,13 @@
                 </label>
 
                 <input
-                    id="bounus-botal"
+                    id="bounus-total"
                     class="input"
                     type="number"
                     placeholder="例：5000"
                     min="0"
                     onwheel="this.blur();"
-                    value="{{ old('bounusTotal') }}"
+                    value="{{ old('bounus-total') }}"
                     name="bounus-total"
                 >
 
@@ -462,7 +463,7 @@
                     class="label"
                     for="bounus-memo"
                 >
-            <i class="bi bi-pencil-square"></i>
+                    <i class="bi bi-pencil-square"></i>
 
                     メモ
                 </label>

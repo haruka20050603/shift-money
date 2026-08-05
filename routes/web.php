@@ -35,6 +35,8 @@ Route::middleware('auth')
     Route::get('/shift-edit', function () {
         return view('login.shift-edit');
     })->name('shift-edit');
+
+    // それぞれシフトボーナス浪費計算処理
     Route::post('/shift-input', [ShiftController::class, 'store'])
     ->name('shift.store');
     Route::post('/expenses-input',[RouhiController::class, 'store'])
